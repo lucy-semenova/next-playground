@@ -19,4 +19,13 @@
   color: #af5417;
   margin: 20px;
 }
-
+.backHome{
+  padding: 14px 24px;
+  font-size: 18px;
+  background-color: #1747af;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}

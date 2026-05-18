@@ -1,9 +1,10 @@
 import styles from "./page.module.css";
+import Link from "next/link";
 export default async function Blog() {
   const blogResponse = await fetch("https://api.vercel.app/blog");
   const blog = await blogResponse.json();
 
-  const categories = blog.map(entry => entry.category);
+  const categories = blog.map((entry) => entry.category);
 
   const uniqueCategories = Array.from(new Set(categories));
 
@@ -13,11 +14,16 @@ export default async function Blog() {
 
       <ol className={styles.ol}>
         {uniqueCategories.map((category) => (
-          <li className={styles.list} key={category}>{category}</li>
+          <li className={styles.list} key={category}>
+            {category}
+          </li>
         ))}
       </ol>
-      <p className={ styles.p}>Total categories: {uniqueCategories.length}</p>
+      <p className={styles.p}>Total categories: {uniqueCategories.length}</p>
 
-    </div >
+      <Link href="/" className={styles.backHome}>
+  Back to Home
+</Link>
+    </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Onclient() {
   const [articles, setArticles] = useState([]);
@@ -29,9 +30,7 @@ export default function Onclient() {
 
   return (
     <div className={styles.page}>
-      <h1 className={styles.title}>
-        10 articles on the client
-      </h1>
+      <h1 className={styles.title}>10 articles on the client</h1>
 
       {loading ? (
         <p>Loading...</p>
@@ -44,6 +43,9 @@ export default function Onclient() {
           ))}
         </ol>
       )}
+      <Link href="/" className={styles.backHome}>
+        Back to Home
+      </Link>
     </div>
   );
 }

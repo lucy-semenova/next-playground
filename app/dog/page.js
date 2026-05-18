@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default async function Dog() {
   const data = await fetch(`https://dog.ceo/api/breeds/image/random`);
@@ -8,6 +9,9 @@ export default async function Dog() {
     <div className={styles.page}>
       <h1 className={styles.title}>Dog of the Day</h1>
       <img className={styles.image} src={dog.message} alt="Random Dog" />
+      <Link href="/" className={styles.backHome}>
+        Back to Home
+      </Link>
     </div>
   );
 }
